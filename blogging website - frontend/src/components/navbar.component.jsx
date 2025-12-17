@@ -1,11 +1,12 @@
 import logo from "../imgs/logo.png";
-import { Link } from "react-router-dom";
+import { Link , Outlet} from "react-router-dom";
 import { useState } from "react";
 const Navbar = () => {
     const [searchBoxVisible, setSearchBoxVisible] = useState(false);
     return (
-        // <h1>MERN </h1>
-        // redirent to home page when clicked on logo THINK ANCHOR BUT WE WANT SAME PAGE SO USE ROUTER
+        <>
+        {/* // <h1>MERN </h1>
+        // redirent to home page when clicked on logo THINK ANCHOR BUT WE WANT SAME PAGE SO USE ROUTER */}
         
         <nav className="navbar">
             <Link to="/" className="flex-none w-10">
@@ -46,8 +47,8 @@ const Navbar = () => {
         </nav>
 
         
-
-
+        <Outlet/>
+</>
     );
 }
 export default Navbar;
