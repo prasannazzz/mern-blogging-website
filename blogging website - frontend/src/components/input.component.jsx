@@ -1,0 +1,33 @@
+import { useState } from "react";
+
+const InputBox = ({ name, type, id, value, placeholder, icon }) => {
+    
+    const [passwordVisible, setPasswordVisible] = useState(false);
+    
+    
+    return (
+        // <h1>input box</h1>
+        <div className="relative w-[100%] mb-4">
+            <input
+                name={name}
+                type={type === "password" ? (passwordVisible ? "text" : "password") : type  }
+                id={id}
+                value={value}
+                placeholder={placeholder}
+                defaultValue={value}
+                className="input-box"
+            />
+        {/* <i className="fi fi-rr-user input-icon"></i> */}
+        <i className={"fi " + icon + " input-icon"}></i>
+        
+        { 
+
+           type == "password" ?
+           <i className="fi fi-rr-eye-crossed input-icon left-[auto] right-4 cursor-pointer" onClick={()=> setPasswordVisible(currentVal => !currentVal) }></i> 
+           : ""
+
+        }
+        </div>
+    )
+}
+export default InputBox;
